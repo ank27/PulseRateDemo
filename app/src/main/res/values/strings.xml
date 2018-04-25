@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PchambinoDemo</string>
+
+    <string name="record">Record</string>
+    <string name="switch_camera">Switch Camera</string>
+    <string name="config">Config</string>
+
+    <!-- Config Dialog -->
+    <string name="face_detection">Face Detection</string>
+    <string name="magnification">Magnification</string>
+    <string name="fps">FPS</string>
+    <string name="done">Done</string>
+
+    <!-- Bpm Dialog -->
+    <string name="average_bpm">Average BPM</string>
+</resources>

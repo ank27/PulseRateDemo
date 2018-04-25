@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "ankurkhandelwal.example.com.pchambinodemo"
+        minSdkVersion 21
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // Specifies the ABI configurations of your native
+            // libraries Gradle should build and package with your APK.
+            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a',
+                    'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    sourceSets {
+        main { jniLibs.srcDirs = ['src/main/jniLibs'] }
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile files('libs/xuggle-xuggler-3.4.jar')
+    compile files('libs/ae-awt.jar')
+    compile files('libs/jsdg-stubs-jre1.5.jar')
+    compile files('libs/com.xuggle.utils-1.22.jar')
+//    compile files('libs/log4j-over-slf4j-1.7.25-sources.jar')
+//    compile files('libs/slf4j-log4j12-1.7.25-sources.jar')
+    compile files('libs/slf4j-api-1.7.25.jar')
+    compile files('libs/slf4j-simple-1.7.25.jar')
+//    implementation project(':openCVLibrary2411')
+    implementation project(':openCVLibrary310')
+}
