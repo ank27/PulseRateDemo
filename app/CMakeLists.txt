@@ -1,14 +1,4 @@
-# For more information about using CMake with Android Studio, read the
-# documentation: https://d.android.com/studio/projects/add-native-code.html
-
-# Sets the minimum version of CMake required to build the native library.
-
 cmake_minimum_required(VERSION 3.4.1)
-
-# Creates and names a library, sets it as either STATIC
-# or SHARED, and provides the relative paths to its source code.
-# You can define multiple libraries, and CMake builds them for you.
-# Gradle automatically packages shared libraries with your APK.
 
 #add_library( # Sets the name of the library.
 #             native-lib
@@ -19,18 +9,10 @@ cmake_minimum_required(VERSION 3.4.1)
 #             # Provides a relative path to your source file(s).
 #             src/main/cpp/native-lib.cpp)
 
- add_library(pt_chambino_p_pulse_Pulse SHARED src/main/cpp/pt_chambino_p_pulse_Pulse.cpp)
- add_library(pt_chambino_p_pulse_Pulse_Face SHARED src/main/cpp/pt_chambino_p_pulse_Pulse_Face.cpp)
-
-
+add_library(pt_chambino_p_pulse_Pulse SHARED src/main/cpp/pt_chambino_p_pulse_Pulse.cpp)
+add_library(pt_chambino_p_pulse_Pulse_Face SHARED src/main/cpp/pt_chambino_p_pulse_Pulse_Face.cpp)
 add_library(Pulse SHARED src/main/cpp/Pulse.cpp)
 add_library(Profiler SHARED src/main/cpp/profiler/Profiler.cpp)
-
-# Searches for a specified prebuilt library and stores the path as a
-# variable. Because CMake includes system libraries in the search path by
-# default, you only need to specify the name of the public NDK library
-# you want to add. CMake verifies that the library exists before
-# completing its build.
 
 find_library( # Sets the name of the path variable.
               log-lib
@@ -45,23 +27,18 @@ find_library( # Sets the name of the path variable.
 
 #include_directories(src/main/jniLibs/jni)
 #add_library( lib-opencv SHARED IMPORTED )
-
 #target_link_libraries(${OpenCV_LIBS} )
 
 set(OpenCV_DIR "src/main/jniLibs/jni")
 FIND_PACKAGE(OpenCV REQUIRED)
-#target_link_libraries(${OpenCV_LIBS})
+message(STATUS "OpenCV libraries: ${OpenCV_LIBS}")
 
+target_link_libraries(Pulse ${OpenCV_LIBS} ${log-lib} )
 
-target_link_libraries( # Specifies the target library.
-                       #native-lib
-                       Pulse
-                       Profiler
-                       ${OpenCV_LIBS}
-                       #lib-opencv
-                        pt_chambino_p_pulse_Pulse
-                        pt_chambino_p_pulse_Pulse_Face
-                       # Links the target library to the log library
-                       # included in the NDK.
+target_link_libraries(Profiler ${OpenCV_LIBS} ${log-lib} )
 
-                       ${log-lib} )
+target_link_libraries(Profiler Pulse)
+target_link_libraries(pt_chambino_p_pulse_Pulse ${OpenCV_LIBS})
+target_link_libraries(pt_chambino_p_pulse_Pulse Pulse)
+target_link_libraries(Pulse EvmGdownIIR)
+target_link_libraries(pt_chambino_p_pulse_Pulse_Face ${OpenCV_LIBS})

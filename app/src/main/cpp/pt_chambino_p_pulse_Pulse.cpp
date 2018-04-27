@@ -1,4 +1,4 @@
-#include <pt_chambino_p_pulse_Pulse.h>
+#include "pt_chambino_p_pulse_Pulse.h"
 #include <string>
 #include <opencv2/core/core.hpp>
 
@@ -16,7 +16,7 @@ using cv::Mat;
  * Method:    _initialize
  * Signature: ()J
  */
-JNIEXPORT jlong JNICALL Java_pt_chambino_p_pulse_Pulse__1initialize
+JNIEXPORT jlong JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1initialize
   (JNIEnv *jenv, jclass)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1initialize enter");
@@ -45,7 +45,7 @@ JNIEXPORT jlong JNICALL Java_pt_chambino_p_pulse_Pulse__1initialize
  * Method:    _load
  * Signature: (JLjava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1load
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1load
   (JNIEnv *jenv, jclass, jlong self, jstring jfilename)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1load enter");
@@ -74,7 +74,7 @@ JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1load
  * Method:    _start
  * Signature: (JII)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1start
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1start
   (JNIEnv *jenv, jclass, jlong self, jint width, jint height)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1start enter");
@@ -102,7 +102,7 @@ JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1start
  * Method:    _onFrame
  * Signature: (JJ)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1onFrame
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1onFrame
   (JNIEnv *jenv, jclass, jlong self, jlong frame)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1onFrame enter");
@@ -131,7 +131,7 @@ JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1onFrame
  * Method:    _facesCount
  * Signature: (J)I
  */
-JNIEXPORT jint JNICALL Java_pt_chambino_p_pulse_Pulse__1facesCount
+JNIEXPORT jint JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1facesCount
   (JNIEnv *jenv, jclass, jlong self)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1facesCount enter");
@@ -160,7 +160,7 @@ JNIEXPORT jint JNICALL Java_pt_chambino_p_pulse_Pulse__1facesCount
  * Method:    _face
  * Signature: (JI)J
  */
-JNIEXPORT jlong JNICALL Java_pt_chambino_p_pulse_Pulse__1face
+JNIEXPORT jlong JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1face
   (JNIEnv *jenv, jclass, jlong self, jint i)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1face enter");
@@ -189,7 +189,7 @@ JNIEXPORT jlong JNICALL Java_pt_chambino_p_pulse_Pulse__1face
  * Method:    _relativeMinFaceSize
  * Signature: (J)D
  */
-JNIEXPORT jdouble JNICALL Java_pt_chambino_p_pulse_Pulse__1relativeMinFaceSize
+JNIEXPORT jdouble JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1relativeMinFaceSize
   (JNIEnv *jenv, jclass, jlong self)
 {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1maxSignalSize enter");
@@ -219,7 +219,7 @@ JNIEXPORT jdouble JNICALL Java_pt_chambino_p_pulse_Pulse__1relativeMinFaceSize
  * Method:    _maxSignalSize
  * Signature: (J)I
  */
-JNIEXPORT jint JNICALL Java_pt_chambino_p_pulse_Pulse__1maxSignalSize
+JNIEXPORT jint JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1maxSignalSize
   (JNIEnv *jenv, jclass, jlong self)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1maxSignalSize enter");
@@ -249,7 +249,7 @@ JNIEXPORT jint JNICALL Java_pt_chambino_p_pulse_Pulse__1maxSignalSize
  * Method:    _faceDetection
  * Signature: (J)Z
  */
-JNIEXPORT jboolean JNICALL Java_pt_chambino_p_pulse_Pulse__1faceDetection__J
+JNIEXPORT jboolean JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1faceDetection__J
   (JNIEnv *jenv, jclass, jlong self)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1faceDetection__J enter");
@@ -279,7 +279,7 @@ JNIEXPORT jboolean JNICALL Java_pt_chambino_p_pulse_Pulse__1faceDetection__J
  * Method:    _faceDetection
  * Signature: (JZ)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1faceDetection__JZ
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1faceDetection__JZ
   (JNIEnv *jenv, jclass, jlong self, jboolean m)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1faceDetection__JZ enter");
@@ -307,7 +307,7 @@ JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1faceDetection__JZ
  * Method:    _magnification
  * Signature: (J)Z
  */
-JNIEXPORT jboolean JNICALL Java_pt_chambino_p_pulse_Pulse__1magnification__J
+JNIEXPORT jboolean JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1magnification__J
   (JNIEnv *jenv, jclass, jlong self)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1magnification__J enter");
@@ -337,7 +337,7 @@ JNIEXPORT jboolean JNICALL Java_pt_chambino_p_pulse_Pulse__1magnification__J
  * Method:    _magnification
  * Signature: (JZ)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1magnification__JZ
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1magnification__JZ
   (JNIEnv *jenv, jclass, jlong self, jboolean m)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1magnification__JZ enter");
@@ -365,7 +365,7 @@ JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1magnification__JZ
  * Method:    _magnificationFactor
  * Signature: (J)I
  */
-JNIEXPORT jint JNICALL Java_pt_chambino_p_pulse_Pulse__1magnificationFactor__J
+JNIEXPORT jint JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1magnificationFactor__J
   (JNIEnv *jenv, jclass, jlong self)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1maxSignalSize enter");
@@ -395,7 +395,7 @@ JNIEXPORT jint JNICALL Java_pt_chambino_p_pulse_Pulse__1magnificationFactor__J
  * Method:    _magnificationFactor
  * Signature: (JI)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1magnificationFactor__JI
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1magnificationFactor__JI
   (JNIEnv *jenv, jclass, jlong self, jint m)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1maxSignalSize enter");
@@ -423,7 +423,7 @@ JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1magnificationFactor__JI
  * Method:    _destroy
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_pt_chambino_p_pulse_Pulse__1destroy
+JNIEXPORT void JNICALL Java_ankurkhandelwal_example_com_pchambinodemo_Pulse__1destroy
   (JNIEnv *jenv, jclass, jlong self)
   {
     LOGD("Java_pt_chambino_p_pulse_Pulse__1destroy enter");
